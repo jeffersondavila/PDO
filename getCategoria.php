@@ -20,7 +20,7 @@ try {
 }
 
 $consulta = "
-SELECT TOP(10) categoria.id, categoria.nombre FROM categoria
+SELECT DISTINCT TOP(10) categoria.id, categoria.nombre FROM categoria
 INNER JOIN producto ON producto.categoriaP=categoria.id
 INNER JOIN venta ON venta.productoid=producto.idproducto
 WHERE YEAR(venta.fecha)='2022';
